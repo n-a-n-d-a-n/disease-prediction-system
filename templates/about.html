@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disease Prediction System - About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #2c3e50;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: static;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 1.5em;
+      color: #e74c3c;
+    }
+
+    nav h1 i {
+      margin-right: 10px;
+    }
+
+    nav .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      color: #e74c3c;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../static/bg3.jpg") center center / cover no-repeat fixed;
+      color: white;
+      padding: 350px 100px;
+      text-align: center;
+    }
+
+    .hero h1, .hero p {
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* About Section */
+    /* About Section */
+.about-section {
+  padding: 80px 40px; /* increased horizontal padding for spacing */
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+  max-width: 1400px; /* increased max-width */
+  width: 90%;         /* allow it to use more screen width */
+  margin: 50px auto;
+  text-align: center;
+}
+
+
+    .about-section h2 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-section h3 {
+      font-size: 1.6em;
+      margin-top: 25px;
+      color: #e74c3c;
+      text-align: center;
+    }
+
+.about-section p, .about-section ul {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 1200px; /* optional: keeps very long lines readable */
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+
+    .technical {
+      background-color: #eef6f1;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 5px solid #4CAF50;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      nav .container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      nav .nav-links a {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <h1><i class="fas fa-heartbeat"></i>Disease Prediction System</h1>
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About</a>
+        <a href="{{ url_for('dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="{{ url_for('results') }}"><i class="fas fa-chart-line"></i> Results</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Our Project</h1>
+    <p>Learn more about the Disease Prediction System and how it helps users make informed health decisions</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <h2>Project Overview</h2>
+    <p>The Disease Prediction System is an AI-powered web application designed to help users assess potential health risks based on symptoms. The system leverages machine learning algorithms trained on large medical datasets to provide accurate predictions quickly.</p>
+
+    <h2>Our Vision</h2>
+    <p>Our vision is to bridge the gap between healthcare and technology by providing an intelligent platform that helps users detect potential health conditions at an early stage, empowering timely intervention and informed decisions.</p>
+
+    <h2>Who We Are</h2>
+    <p>We are a team of developers, data scientists, and healthcare enthusiasts dedicated to building innovative solutions. Our expertise spans <strong>machine learning, data analytics, and medical research</strong>, enabling us to deliver accurate and reliable predictions.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>Symptom-based Prediction with a predefined list or manual input</li>
+      <li>Real-time Analysis for instant predictions while maintaining privacy</li>
+      <li>High Accuracy using advanced ML models</li>
+      <li>User-friendly Interface across devices</li>
+      <li>Open Source for transparency and community collaboration</li>
+    </ul>
+
+    <h2>Technology Stack</h2>
+    <ul>
+      <li>Frontend: HTML, CSS, JavaScript, Font Awesome</li>
+      <li>Backend: Flask (Python)</li>
+      <li>Machine Learning: Python (Scikit-learn, Pandas, NumPy)</li>
+      <li>Data Handling: JSON for symptom input/output</li>
+      <li>Deployment: Local server or cloud hosting</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <p>Users select or enter symptoms into the web interface. The backend evaluates the data using trained ML models and returns the most probable disease(s), along with relevant guidance.</p>
+
+    <div class="technical">
+      <h2>Technical Overview</h2>
+      <h3>Machine Learning & AI</h3>
+      <ul>
+        <li>Data Preprocessing: Cleaning, normalization, and feature extraction</li>
+        <li>Feature Engineering: Identifying symptom-disease correlations</li>
+        <li>Predictive Modeling:
+          <ul>
+            <li>Classification Models: Logistic Regression, Random Forest, XGBoost</li>
+            <li>Deep Learning Models: Feedforward Neural Networks, CNNs</li>
+            <li>Ensemble Techniques: Combining models for better accuracy</li>
+          </ul>
+        </li>
+        <li>Explainable AI: Feature importance analysis for transparency</li>
+      </ul>
+
+      <h3>Data Sources</h3>
+      <ul>
+        <li>Public symptom-disease datasets</li>
+        <li>Peer-reviewed clinical studies</li>
+        <li>Anonymized user-contributed data (privacy compliant)</li>
+      </ul>
+
+      <h3>System Architecture</h3>
+      <ul>
+        <li>Frontend: HTML, CSS, JavaScript</li>
+        <li>Backend: Flask API</li>
+        <li>Model Server: Python ML libraries (scikit-learn, TensorFlow, PyTorch)</li>
+        <li>Database: SQL/NoSQL storage</li>
+        <li>Security: Data encryption and privacy protocols</li>
+      </ul>
+
+      <h3>Key Technical Features</h3>
+      <ul>
+        <li>Real-time symptom analysis</li>
+        <li>Multi-disease prediction</li>
+        <li>Continuous learning with model updates</li>
+        <li>Integration-ready for IoT devices and EHR systems</li>
+        <li>Predictive dashboards for healthcare professionals</li>
+      </ul>
+
+      <h3>Future Enhancements</h3>
+      <ul>
+        <li>Graph Neural Networks for complex symptom-disease relationships</li>
+        <li>NLP for natural language symptom input</li>
+        <li>Cloud-based scalable APIs</li>
+        <li>Mobile applications for on-the-go predictions</li>
+      </ul>
+    </div>
+
+    <h2>Disclaimer</h2>
+    <p>This system is intended for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Users are strongly advised to consult healthcare professionals for any health concerns.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Disease Prediction System. All rights reserved.</p>
+    <p style="margin-top: 10px; opacity: 0.8;">
+      <i class="fas fa-exclamation-triangle"></i> 
+      Disclaimer: Always consult healthcare professionals for accurate diagnosis.
+    </p>
+  </footer>
+</body>
+</html>
