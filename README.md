@@ -1,4 +1,4 @@
-# 🏥 Disease Prediction System using Machine Learning
+﻿# 🏥 Disease Prediction System using Machine Learning
 
 > Predict diseases from symptoms using a trained Random Forest model, served via a Flask web application.
 
@@ -7,7 +7,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?style=flat-square&logo=scikit-learn)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-**[🔗 Live Demo](https://your-app.onrender.com)** · **[📁 Repository](https://github.com/n-a-n-d-a-n/disease-prediction-system)**
+**[🔗 Live Demo](https://disease-prediction-system-arl6.onrender.com)** · **[📁 Repository](https://github.com/n-a-n-d-a-n/disease-prediction-system)**
 
 ---
 
