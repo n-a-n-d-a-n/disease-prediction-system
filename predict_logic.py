@@ -1,4 +1,4 @@
-# app.py
+﻿# app.py
 import os
 import traceback
 import joblib
@@ -7,7 +7,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask import Flask, request, jsonify, render_template, flash, redirect, url_for
-from flask_mail import Mail, Message
+
 from sklearn.preprocessing import LabelEncoder
 from flask_cors import CORS
 
@@ -17,14 +17,14 @@ MODEL_PATH = os.path.join(BASE_DIR, "outputs", "models", "best_model.joblib")
 TRAIN_CSV = os.path.join(BASE_DIR, "Training.csv")
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.secret_key = "Athujojo@2465"
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "dev-only-change-me")
 CORS(app) 
 
 # -------------------------------
 # Email Configuration
 # -------------------------------
-SENDER_EMAIL = "atharvkadak1025@gmail.com"
-SENDER_PASSWORD = "jbwz wber drdn cwip"  # Use App Password if Gmail
+SENDER_EMAIL = os.environ.get("SENDER_EMAIL")
+SENDER_PASSWORD = os.environ.get("SENDER_PASSWORD")
 
  # harmless when serving templates from same origin; helpful while debugging
 
@@ -43,7 +43,7 @@ if os.path.exists(TRAIN_CSV):
             print(f"[INFO] Loaded training CSV. {len(feature_cols)} features found.")
         else:
             feature_cols = training_data.columns.tolist()
-            print("[WARN] 'prognosis' column not found in Training.csv — using all columns as features.")
+            print("[WARN] 'prognosis' column not found in Training.csv â€” using all columns as features.")
     except Exception:
         print("[ERROR] Failed to read Training.csv")
         traceback.print_exc()
@@ -68,7 +68,7 @@ def home():
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    return render_template("dashboard.html", streamlit_url=os.environ.get("STREAMLIT_URL", "http://127.0.0.1:8501"))
 
 @app.route("/about")
 def about():
@@ -184,7 +184,7 @@ def api_predict():
         else:
             label = str(pred0)
 
-        # return JSON only — for frontend API fetch()
+        # return JSON only â€” for frontend API fetch()
         return jsonify({
             "success": True,
             "prediction": label,
@@ -205,7 +205,7 @@ def contact():
         return redirect(url_for("home"))
 
     # --------------------------
-    # 1️⃣ Send message to admin (you)
+    # 1ï¸âƒ£ Send message to admin (you)
     # --------------------------
     admin_subject = f"New Contact Form Submission from {name}"
     admin_body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
@@ -229,7 +229,7 @@ def contact():
         print(f"[ERROR] Failed to send admin email: {e}")
 
     # --------------------------
-    # 2️⃣ Send acknowledgment to user
+    # 2ï¸âƒ£ Send acknowledgment to user
     # --------------------------
     subject_user = "Thank You for Visiting Our Website!"
     body_user = f"""
@@ -241,7 +241,7 @@ def contact():
     Our team will get back to you shortly.
 
     Warm regards,
-    The Disease Prediction System Team 🩺
+    The Disease Prediction System Team ðŸ©º
     """
 
     try:
@@ -261,7 +261,7 @@ def contact():
         print("[INFO] Acknowledgment email sent to user.")
     except Exception as e:
         print(f"[ERROR] Failed to send acknowledgment email: {e}")
-        flash("Your message was received, but we couldn’t send a confirmation email.", "warning")
+        flash("Your message was received, but we couldnâ€™t send a confirmation email.", "warning")
 
     return redirect(url_for("home"))
 

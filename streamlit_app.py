@@ -1,9 +1,10 @@
-# dashboard.py
+﻿# dashboard.py
 import streamlit as st
+import os
 import requests
 import pandas as pd
 
-API_BASE = "http://127.0.0.1:5000"
+API_BASE = os.environ.get("FLASK_API_URL", "http://127.0.0.1:5000")
 
 st.set_page_config(page_title="Disease Prediction System", layout="wide")
 
@@ -74,7 +75,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#2E86C1;">🥦 Nutrition</h4>
+    <h4 style="color:#2E86C1;">ðŸ¥¦ Nutrition</h4>
     <p>Eat balanced meals with fruits, vegetables, proteins, and grains.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -82,7 +83,7 @@ with col1:
 with col2:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#27AE60;">🏋️ Exercise</h4>
+    <h4 style="color:#27AE60;">ðŸ‹ï¸ Exercise</h4>
     <p>Do at least 30 minutes of moderate physical activity daily.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -90,7 +91,7 @@ with col2:
 with col3:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#F39C12;">🧘 Mental Health</h4>
+    <h4 style="color:#F39C12;">ðŸ§˜ Mental Health</h4>
     <p>Practice meditation, journaling, or hobbies to maintain peace of mind.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -100,15 +101,15 @@ col4, col5, col6 = st.columns(3)
 with col4:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#8E44AD;">🛌 Rest</h4>
-    <p>Get 7–8 hours of quality sleep for optimal recovery.</p>
+    <h4 style="color:#8E44AD;">ðŸ›Œ Rest</h4>
+    <p>Get 7â€“8 hours of quality sleep for optimal recovery.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col5:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#C0392B;">🚭 Lifestyle</h4>
+    <h4 style="color:#C0392B;">ðŸš­ Lifestyle</h4>
     <p>Avoid smoking, limit alcohol, and reduce stress.</p>
     </div>
     """, unsafe_allow_html=True)
@@ -116,7 +117,7 @@ with col5:
 with col6:
     st.markdown("""
     <div style="background-color:#f8f9fa; padding:20px; border-radius:10px; box-shadow:2px 2px 8px #ddd;">
-    <h4 style="color:#E67E22;">💧 Hydration</h4>
-    <p>Drink 8–10 glasses of water each day to stay hydrated.</p>
+    <h4 style="color:#E67E22;">ðŸ’§ Hydration</h4>
+    <p>Drink 8â€“10 glasses of water each day to stay hydrated.</p>
     </div>
     """, unsafe_allow_html=True)
