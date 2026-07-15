@@ -21,10 +21,10 @@ This system takes symptom inputs from a user and predicts the most likely diseas
 
 - **Symptom-based disease prediction** powered by a Random Forest classifier
 - **Interactive web UI** with multiple pages (Home, Dashboard, About, Contact)
-- **REST API** — `/predict` and `/symptoms` endpoints for programmatic access
+- **REST API** - `/predict` and `/symptoms` endpoints for programmatic access
 - **CORS-enabled** for external frontend integration
-- **Email notification system** — auto-acknowledgment to users + admin alerts on contact form submission
-- **Multiple ML models benchmarked** — Random Forest, Decision Tree, SVM, Logistic Regression, XGBoost
+- **Email notification system** - auto-acknowledgment to users + admin alerts on contact form submission
+- **Multiple ML models benchmarked** - Random Forest, Decision Tree, SVM, Logistic Regression, XGBoost
 
 ---
 
@@ -66,10 +66,10 @@ disease-prediction-system/
 
 Selected over other models for the following reasons:
 
-- **Robustness** — averages multiple decision trees, reducing overfitting
-- **Feature Importance** — reveals which symptoms drive each prediction
-- **Generalization** — reliable on unseen data, critical for healthcare use cases
-- **Scalability** — handles large datasets with mixed feature types efficiently
+- **Robustness** - averages multiple decision trees, reducing overfitting
+- **Feature Importance** - reveals which symptoms drive each prediction
+- **Generalization** - reliable on unseen data, critical for healthcare use cases
+- **Scalability** - handles large datasets with mixed feature types efficiently
 
 ### Benchmark Results
 
